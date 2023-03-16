@@ -1,0 +1,145 @@
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+$white:#ffff;
+$black:rgba(0, 0, 0, 0.926);
+$nav_background:rgba(0, 0, 0, 0.926);
+;
+
+ul li {
+   list-style: none;
+
+}
+
+a {
+   text-decoration: none;
+   cursor: pointer;
+}
+
+
+
+a:hover {
+   cursor: pointer;
+}
+
+
+
+img {
+   max-width: 100%;
+   display: inline-block;
+}
+
+
+// ?nav mobile style
+.mobile_nav {
+   overflow-x: hidden;
+
+}
+
+@media only screen and (min-width: 600px) {
+   .mobile_nav {
+      display: none;
+   }
+}
+
+nav {
+   position: relative;
+
+   .nav_btn {
+      position: absolute;
+      right: 5%;
+      top: 1%;
+      background-color: $black;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      z-index: 100;
+
+      &__span {
+         width: 25px;
+         height: 2.5px;
+         background-color: #ffff;
+         margin: 2.5px;
+
+      }
+
+      &.active {
+         border: 5px solid $white;
+
+
+      }
+
+      &.nav_animation {
+         animation: spin_nav_icon linear;
+         animation-duration: .4s;
+      }
+
+      &.remove_animation {
+         animation: remove_spin_nav_icon linear;
+         animation-duration: .4s;
+
+      }
+
+   }
+
+   .main_menu {
+      background: linear-gradient(rgba(42, 35, 35, 0.5),
+            rgba(42, 35, 35, 0.2));
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: space-evenly;
+      transition: all .3s;
+
+      transform: translateX(100%);
+
+      li {
+         padding: 15px 50px;
+
+      }
+
+      li:hover {
+         background-color: red;
+      }
+
+      li a {
+         color: $white;
+         padding: 5px;
+         font-size: 18px;
+      }
+
+      &.active {
+         transform: translateX(0%);
+      }
+   }
+
+   @keyframes spin_nav_icon {
+      0% {
+         transform: rotate(0deg);
+      }
+
+      100% {
+         transform: rotate(360deg);
+      }
+   }
+
+   @keyframes remove_spin_nav_icon {
+      0% {
+         transform: rotate(360deg);
+      }
+
+      360% {
+         transform: rotate(0deg);
+      }
+   }
+}
