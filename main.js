@@ -1,12 +1,12 @@
 const nav_btn = document.querySelector(".mobile_nav #nav .nav_btn");
 const main_menu = document.querySelector(".mobile_nav .main_menu");
 const nav__items = document.querySelectorAll(
-	"mobile_nav .main_menu .nav__item"
+	".mobile_nav .main_menu .nav__item"
 );
-
+console.log(nav__items);
 nav__items.forEach((items) => {
 	items.addEventListener("click", function () {
-		alert("hi");
+		main_menu.classList.remove("active");
 	});
 });
 function add_nav_btn_border() {
