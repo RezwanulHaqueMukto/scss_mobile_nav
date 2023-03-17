@@ -4,12 +4,13 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   scroll-behavior: smooth;
 }
 
 $white:#ffff;
 $black:rgba(0, 0, 0, 0.926);
 $nav_background:rgba(0, 0, 0, 0.926);
-;
+
 
 ul li {
    list-style: none;
@@ -46,7 +47,13 @@ img {
       display: none;
    }
 }
-
+.mobile_nav{
+   position: fixed;
+   top: 0%;
+   width: 100%;
+   height: 100%;
+   right: 0%;
+}
 nav {
    position: relative;
 

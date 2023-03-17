@@ -7,6 +7,8 @@ console.log(nav__items);
 nav__items.forEach((items) => {
 	items.addEventListener("click", function () {
 		main_menu.classList.remove("active");
+		nav_btn.classList.remove("active");
+
 	});
 });
 function add_nav_btn_border() {
